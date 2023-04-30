@@ -34,7 +34,7 @@ namespace AWS.S3.API.Controllers
             var archive = await awsS3.GetObjectAsync(bucket, keyPath);
 
             return Ok(
-                      $"The file was found inside the bucket!" +
+                      $"The file was found inside the bucket!\n" +
                       $"Bucket: {archive.BucketName} \n" +
                       $"Local:  {archive.Key}        \n"
                       );
