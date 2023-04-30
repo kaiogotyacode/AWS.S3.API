@@ -22,10 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Application\Domain\" />
     <Folder Include="Application\Infrastructure\" />
-    <Folder Include="Application\Services\" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>
