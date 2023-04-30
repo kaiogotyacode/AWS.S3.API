@@ -33,8 +33,12 @@ namespace AWS.S3.API.Controllers
             var awsS3 = new AmazonS3Client(s3config.AwsCredentials, Amazon.RegionEndpoint.USEast2);
             var archive = await awsS3.GetObjectAsync(bucket, keyPath);
 
-            return Ok(archive);
+            return Ok(
+                      $"The file was found inside the bucket!" +
+                      $"Bucket: {archive.BucketName} \n" +
+                      $"Local:  {archive.Key}        \n"
+                      );
         }
-      
+
     }
 }
