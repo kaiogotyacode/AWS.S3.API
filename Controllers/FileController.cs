@@ -13,8 +13,8 @@ namespace AWS.S3.API.Controllers
             try
             {
                 var awsS3 = new S3Service();
-                var key = "imagens/" + Guid.NewGuid();
-                var uploadFile = await awsS3.UploadFile("apis3learning", key, file.Path);
+                var path = "imagens/" + Guid.NewGuid();
+                var uploadFile = await awsS3.UploadFile("apis3learning", path, file.Path);
 
                 return Ok(uploadFile);
             }

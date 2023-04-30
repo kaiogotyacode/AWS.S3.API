@@ -29,7 +29,7 @@ namespace AWS.S3.API.Application.Services
 
         }
 
-        public async Task<bool> UploadFile(string bucket, string key, IFormFile file)
+        public async Task<bool> UploadFile(string bucket, string keyPath, IFormFile file)
         {
             using var newMemoryStream = new MemoryStream();
             file.CopyTo(newMemoryStream);
@@ -39,7 +39,7 @@ namespace AWS.S3.API.Application.Services
             await fileTransferUtility.UploadAsync(new TransferUtilityUploadRequest
             {
                 BucketName = bucket,
-                Key = key,
+                Key = keyPath,
                 InputStream = newMemoryStream,
                 ContentType = file.ContentType
             }); 
